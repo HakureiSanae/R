@@ -25,6 +25,24 @@ status <- c("Poor", "Improved", "Excellent", "Poor")
 patientdata <- data.frame(patientID, age, diabetes, status)
 print(patientdata)
 
+#一般表达
+summary(mtcars$mpg)
+plot(mtcars$mpg, mtcars$disp)
+plot(mtcars$mpg, mtcars$wt)
+#attach()函数：将数据框添加到R的搜索路径中
+#detach()函数: 将数据框从搜索路径中去除
+attach(mtcars)
+  summary(mpg)
+  plot(mpg, disp)
+  plot(mpg, wt)
+detach(mtcars)
+#with()函数：
+with(mtcars,{
+  print(summary(mpg))
+  plot(mpg, disp)
+  plot(mpg, wt)
+})
+
 #因子factor
 patientID <- c(1, 2, 3, 4)
 age <- c(25, 34, 28, 52)
